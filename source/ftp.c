@@ -48,14 +48,8 @@ static struct ftp_command *ftp_commands; // Points to available FTP commands
 
 /// Reimplementation of missing functions --------------------------------------
 
-// PS4 is missing tolower(), strcasecmp(), and strcasestr().
+// PS4 is missing strcasecmp() and strcasestr().
 #ifdef PS4
-static inline int tolower(int c)
-{
-    if (c >= 'A' && c <= 'Z')
-        c += 32;
-    return c;
-}
 
 static int strcasecmp(const char *s1, const char *s2)
 {
